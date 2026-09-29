@@ -1,0 +1,234 @@
+body {
+  font-family: Arial, sans-serif;
+
+  background: #1e1e24;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  padding: 20px;
+  margin: 0;
+}
+
+
+.editor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  min-width: 1000px;
+  width: 100%;
+}
+
+canvas {
+  background: #111;
+
+  border: 2px dashed #4cc9f0;
+
+  max-width: 100%;
+
+  cursor: crosshair;
+
+  &.drag-over {
+    border-color: #00ff88;
+    background-color: #1a2a22;
+  }
+
+  &.rotate-cursor {
+    cursor: grabbing;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+
+  width: 280px;
+
+  border-radius: 8px;
+
+  gap: 12px;
+  padding: 20px;
+
+  background: #2b2d42;
+  
+  box-sizing: border-box;
+}
+
+.control-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  gap: 10px;
+
+  font-size: 14px;
+}
+
+
+input, button, select, .file-upload-btn {
+  width: 100%;
+
+  font-size: 14px;
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 8px 12px;
+
+  box-sizing: border-box;
+}
+
+input[type="text"], input[type="number"] {
+  outline: none;
+
+  background: #3f4261;
+  color: #fff;
+}
+
+input[type="color"] {
+  height: 35px;
+  width: 50px;
+  
+  background: #3f4261;
+
+  padding: 2px 4px;
+
+  cursor: pointer;
+}
+
+input[type="range"] {
+  appearance: none;
+
+  width: 100%;
+
+  background: transparent;
+
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+
+  /* дорожка */
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+
+    background: #3f4261;
+      
+    border-radius: 3px;
+      
+    cursor: pointer;
+  }
+
+  /* ползунок */
+  &::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+
+    background: #4cc9f0;
+
+    border-radius: 50%;
+      
+    margin-top: -5px; /* Выравнивание по центру дорожки */
+      
+    appearance: none;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+
+    &:hover {
+      background: #48bfe3;
+      
+      transform: scale(1.2);
+    }
+  }
+
+
+  /* для Firefox */
+  &::-moz-range-track {
+    width: 100%;
+    height: 6px;
+
+    background: #3f4261;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+
+    background: #4cc9f0;
+    
+    border: none;
+    border-radius: 50%;
+    
+    cursor: pointer;
+  }
+}
+
+input:disabled, select:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+button, .file-upload-btn {
+  background: #4cc9f0;
+  color: #000;
+
+  font-weight: bold;
+
+  display: inline-block;
+  text-align: center;
+
+  user-select: none;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #48bfe3;
+  }
+
+  &:disabled {
+    background: #3f4261;
+    color: #888;
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+  }
+}
+
+select {
+  background-color: #3f4261;
+  color: #fff;
+
+  outline: none;
+  cursor: pointer;
+  
+  /* кастомная стрелка */
+  appearance: none;
+
+  padding-right: 30px;
+
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%234cc9f0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 18px;
+
+  & > option {
+    background-color: #2b2d42;
+    color: #fff;
+  }
+}

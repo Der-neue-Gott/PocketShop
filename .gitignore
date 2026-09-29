@@ -1,0 +1,20 @@
+# Зависимости
+node_modules/
+
+# Папка сборки
+dist/
+dist-isolation/
+
+# Логи ошибок
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Системные файлы ОС и редакторов
+.DS_Store
+.vscode/
+.idea/
+
+# Переменные окружения (если появится .env с ключами)
+*.local
+.env
