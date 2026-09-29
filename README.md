@@ -2,7 +2,7 @@
 
 Интерактивный минималистичный клиентский фоторедактор, написанный на чистом TypeScript с использованием HTML5 Canvas API.
 
-🚀 **[Попробовать редактор онлайн](ССЫЛКА_НА_VERCEL)**
+🚀 **[Попробовать редактор онлайн](https://pocket-shop.vercel.app/)**
 
 ## 🛠 Технологии
 - **Frontend:** TypeScript, Native HTML5 Canvas API, CSS3
